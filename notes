@@ -1,0 +1,9 @@
+export const config = {
+  endpoint: "https://cloud.appwrite.io/v1",
+  platform: "com.hunc.aora",
+  projectId: "66224370570b732b3f35",
+  databaseId: "662244aa9e9bda53e587",
+  userCollectionId: "662244be2991c247cd93",
+  videoCollectionId: "662244d7236c3d132aac",
+  storageId: "6622460b20b6a2edd306",
+};

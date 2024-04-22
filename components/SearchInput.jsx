@@ -11,9 +11,9 @@ import React from "react";
 import { icons } from "../constants";
 import { router, usePathname } from "expo-router";
 
-const SearchInput = () => {
+const SearchInput = ({ initialQuery }) => {
   const pathname = usePathname();
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(initialQuery || "");
   return (
     <View className="h-16 w-full flex-row items-center space-x-4 rounded-2xl border-2 border-black-200 bg-black-100 px-4 focus:border-secondary">
       <TextInput

@@ -16,11 +16,13 @@ import EmptyState from "../../components/EmptyState";
 import { getAllPosts, getLatestPosts } from "../../lib/appwrite";
 import useAppwrite from "../../lib/useAppwrite";
 import VideoCard from "../../components/VideoCard";
+import { useGlobalContext } from "../../context/GlobalProvider";
 
 const Home = () => {
   const { data: posts, refetch } = useAppwrite(getAllPosts);
   const { data: latestPosts } = useAppwrite(getLatestPosts);
   const [refreshing, setRefreshing] = useState(false);
+  const { user, setUser, setIsLoggedIn } = useGlobalContext();
 
   const onRefresh = async () => {
     setRefreshing(true);
@@ -39,10 +41,10 @@ const Home = () => {
             <View className="mb-6 flex-row items-start justify-between">
               <View>
                 <Text className="font-pmedium text-sm text-gray-100">
-                  Welcome Back
+                  Welcome Back,
                 </Text>
                 <Text className="font-psemibold text-2xl text-white">
-                  hunctasci
+                  {user?.username}
                 </Text>
               </View>
               <View className="mt1.5">
